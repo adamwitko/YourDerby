@@ -1,0 +1,14 @@
+$background-colors: (
+  'primary': #6534ff,
+  'secondary': #62bcfa
+);
+
+@function background-color($key: 'primary'){ 
+  @return map-get($background-colors, $key);
+}
+
+$primary-tinted: mix(black, background-color('primary'), 10%);
+
+body { 
+  background-color: background-color('primary');
+}

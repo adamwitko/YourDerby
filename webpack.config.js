@@ -5,8 +5,9 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var outputPath = path.join(__dirname, 'public');
 var main = path.join(__dirname, 'src', 'app', 'main.ts');
-var vendor = path.join(__dirname, 'src', 'app', 'vendor.ts');
-var index = path.join(__dirname, 'src', 'app', 'index.html');
+var vendor = path.join(__dirname, 'src', 'vendor.ts');
+var polyfills = path.join(__dirname, 'src', 'polyfills.ts');
+var index = path.join(__dirname, 'src', 'index.html');
 
 function root(args) {
   args = Array.prototype.slice.call(arguments,0);
@@ -16,12 +17,12 @@ function root(args) {
 module.exports = {
   entry: {
     app: main,
+    polyfills: polyfills,
     vendor: vendor
   },
   output: {
     path: outputPath,
     filename: '[name].js',
-    chunkFilename: '[id].chunk.js'
   },
   resolve: {
     extensions: ['', '.js', '.ts']
@@ -41,23 +42,15 @@ module.exports = {
         loader: 'file?name=assets/[name].[hash].[ext]'
       },
       {
-        test: /\.css$/,
-        exclude: root('app'),
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
-      },
-      {
-        test: /\.css$/,
-        include: root('app'),
-        loader: 'raw'
+        test: /\.scss$/,
+        loaders: ['style', 'css?sourceMap', 'sass?sourceMap']
       }
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['app', 'vendor']
-    }),
-    new HtmlWebpackPlugin({
-      template: index
-    })
+    new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'vendor', 'polyfills'] }),
+    new HtmlWebpackPlugin({ template: index }),
+    new webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin('[name].[hash].css')
   ]  
 };
