@@ -1,11 +1,10 @@
-<section class="hero is-info is-primary">
+<section class="hero is-info is-primary is-bold">
   <div class="hero-head">
     <header class="nav">
       <div class="container">
         <div class="nav-left">
-          <a class="nav-item">
-            <img src="logo.png" alt="Logo">
-            <h1 class="title">Your Derby.</h1>
+          <a class="nav-item" routerLink="/" routerLinkActive="active">
+            <h1 class="title">Derby & You.</h1>
           </a>
         </div>
         <span class="nav-toggle">
@@ -14,12 +13,12 @@
           <span></span>
         </span>
         <div class="nav-right nav-menu">
-          <a class="nav-item is-tab is-active">
+          <a routerLink="/" routerLinkActive="active" class="nav-item is-tab is-active">
             <span class="icon is-large">
                 <i class="fa fa-home"></i>
             </span>
           </a>
-          <a class="nav-item is-tab">
+          <a routerLink="/profile" routerLinkActive="active" class="nav-item is-tab">
             <span class="icon is-large">
                 <i class="fa fa-user"></i>
             </span>
