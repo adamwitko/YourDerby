@@ -50,7 +50,6 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'vendor', 'polyfills'] }),
     new HtmlWebpackPlugin({ template: index }),
-    new webpack.optimize.UglifyJsPlugin(),
     new ExtractTextPlugin('[name].[hash].css')
   ]  
 };

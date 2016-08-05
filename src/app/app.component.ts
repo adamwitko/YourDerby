@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
-import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
+import { HEADER_DIRECTIVES } from './shared/header/header.component';
+import { FOOTER_DIRECTIVES } from './shared/footer/footer.component';
 
 @Component({
   selector: 'app',
   templateUrl: './app.component.html',
   styles: [ require('./app.style.scss').toString() ],
-  directives: [MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_SIDENAV_DIRECTIVES]
+  directives: [ HEADER_DIRECTIVES, FOOTER_DIRECTIVES ]
 })
-export class AppComponent {}
+export class AppComponent {
+}
