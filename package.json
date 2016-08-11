@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf public",
-    "postinstall": "typings install",
+    "postinstall": "cd src && typings install",
     "typings": "typings",
     "start": "concurrently \"npm run pack:w\" \"npm run lite\" ",
     "lite": "lite-server -c lite-server.config.json",
