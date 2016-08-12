@@ -1,4 +1,5 @@
-import {Component, ViewEncapsulation, ChangeDetectionStrategy} from '@angular/core';
+import {Component, ViewEncapsulation, ChangeDetectionStrategy, Input} from '@angular/core';
+import { IGameInvite } from '../interfaces/game-invite';
 
 @Component({
     moduleId: module.id,
@@ -8,6 +9,13 @@ import {Component, ViewEncapsulation, ChangeDetectionStrategy} from '@angular/co
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GameInvitationComponent {
+    @Input()
+    public game: IGameInvite;
+
+    private show: Boolean = true;
+
+    public accept = ($event: any) => this.show = false;
+    public decline = ($event: any) => this.show = false;
 }
 
 export const GAME_INVITATION_DIRECTIVES: any[] = [GameInvitationComponent];

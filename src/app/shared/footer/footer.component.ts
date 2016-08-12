@@ -7,7 +7,7 @@ import {Component, ViewEncapsulation, ChangeDetectionStrategy} from '@angular/co
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FooterComponent { 
+export class FooterComponent {
 }
 
-export const FOOTER_DIRECTIVES: any[] = [ FooterComponent ];
+export const FOOTER_DIRECTIVES: any[] = [FooterComponent];

@@ -6,7 +6,7 @@ import { AuthenticationGuard } from './services/authentication.guard';
  
 const routes: RouterConfig = [
   { path: 'profile', component: ProfileComponent, canActivate: [AuthenticationGuard] },  
-  { path: '', component: DashboardComponent, canActivate: [AuthenticationGuard]  },
+  { path: 'home', component: DashboardComponent, canActivate: [AuthenticationGuard]  },
   { path: '**', component: PageNotFoundComponent }
 ];
 

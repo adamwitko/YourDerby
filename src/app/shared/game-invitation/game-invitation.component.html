@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [hidden]="!show">
   <header class="card-header">
     <p class="card-header-title">
       <strong>Game Invite</strong>
@@ -8,39 +8,31 @@
     <div class="content">
       <div>
         <p>
-          SDD Presents 'Back to Basics' scrim!
+          {{game.title}}
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla.
+          {{game.description}}
         </p>
       </div>
       <br/>
       <div>
         <i class="fa fa-calendar"></i>
-        <small>19 August at 20:00</small>
+        <small>{{game.dateTime}}</small>
         <br/>
         <i class="fa fa-map-marker"></i>
-        <small>The Coop Academy</small>
+        <small>{{game.location}}</small>
       </div>
       <br/>
       <div>
-        <span class="tag is-info is-small">
-                  Intermediate
-                </span>
-        <span class="tag is-info is-small">
-                  12 Going
-                </span>
-        <span class="tag is-info is-small">
-                  3 Comments
-                </span>
+        <span *ngFor="let tag of game.tags" class="tag is-info is-small">{{tag}}</span>
       </div>
     </div>
   </div>
   <footer class="card-footer">
-    <a class="card-footer-item">
+    <a class="card-footer-item" (click)="accept()">
       <i class="fa fa-check"></i>
     </a>
-    <a class="card-footer-item">
+    <a class="card-footer-item" (click)="decline()">
       <i class="fa fa-times"></i>
     </a>
   </footer>

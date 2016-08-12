@@ -1,0 +1,76 @@
+<div class="columns">
+    <div class="column">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="http://placehold.it/300x225" alt="">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-5">Adam Witko</p>
+                        <p class="subtitle is-6">@adamwitko</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column is-three-quarters">
+        <div class="tabs">
+            <ul>
+                <li class="is-active"><a>About</a></li>
+                <li><a>Team History</a></li>
+                <li><a>Events</a></li>
+            </ul>
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse
+            pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet
+            dolor blandit rutrum. Nunc in tempus turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta
+            eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc
+            in tempus turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies
+            elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis. Lorem
+            ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse
+            pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.
+        </div>
+    </div>
+</div>
+<div>
+
+    <article class="media">
+        <figure class="media-left">
+            <p class="image is-64x64">
+                <img src="http://placehold.it/128x128">
+            </p>
+        </figure>
+        <div class="media-content">
+            <p class="control">
+                <textarea class="textarea" placeholder="Add a comment..." id="comment"></textarea>
+            </p>
+            <p class="control">
+                <button type="submit" class="button is-success is-pulled-right" (click)="postComment($event)">Post comment</button>
+            </p>
+        </div>
+    </article>
+
+    <article class="media" *ngFor="let comment of comments">
+        <figure class="media-left ">
+            <p class="image is-64x64 ">
+                <img src="http://placehold.it/128x128 ">
+            </p>
+        </figure>
+
+        <div class="media-content ">
+            <div class="content">
+                <p>
+                    <strong>{{comment.author}}</strong>
+                    <br>{{comment.body}}
+                    <br>
+                    <small><a>Like</a> · <a>Reply</a> · {{comment.hoursAgo}}</small>
+                </p>
+            </div>
+        </div>
+    </article>
+</div>

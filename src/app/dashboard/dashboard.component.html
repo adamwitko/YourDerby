@@ -1,15 +1,8 @@
 <div class="columns">
     <div class="column is-two-thirds">
-            <!-- insert game-invitation component here temporarily -->
+        <game-invitation [game]="game"></game-invitation>
     </div>
-
     <div class="column">
-        <div class="notification is-info">
-            <button class="delete"></button> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus
-            mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus
-            diam, et dictum felis venenatis efficitur. Aenean ac eleifend lacus, in mollis lectus. Donec sodales, arcu et
-            sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et
-            sem eget, facilisis sodales sem.
-        </div>
+        <notification [description]="notification"></notification>
     </div>
 </div>

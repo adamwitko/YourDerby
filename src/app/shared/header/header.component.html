@@ -3,7 +3,7 @@
     <header class="nav">
       <div class="container">
         <div class="nav-left">
-          <a class="nav-item" routerLink="/" routerLinkActive="active">
+          <a class="nav-item"  [routerLink]="['/home']">
             <h1 class="title">Derby & You.</h1>
           </a>
         </div>
@@ -13,19 +13,19 @@
           <span></span>
         </span>
         <div class="nav-right nav-menu">
-          <a routerLink="/" routerLinkActive="active" class="nav-item is-tab is-active">
+          <a [routerLink]="['/home']" [routerLinkActive]="['is-active']" class="nav-item is-tab">
             <span class="icon is-large">
                 <i class="fa fa-home"></i>
             </span>
           </a>
-          <a routerLink="/profile" routerLinkActive="active" class="nav-item is-tab">
+          <a [routerLink]="['/profile']" [routerLinkActive]="['is-active']" class="nav-item is-tab">
             <span class="icon is-large">
                 <i class="fa fa-user"></i>
             </span>
           </a>
           <a class="nav-item is-tab">
             <span class="icon is-large">
-                <i class="fa fa-sign-in"></i>
+                <i class="fa fa-cog"></i>
             </span>
           </a>
         </div>
